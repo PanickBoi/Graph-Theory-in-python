@@ -1,0 +1,60 @@
+{
+  "graph_info": {
+    "is_enabled": true,
+    "node_info": {
+      "is_enabled": true,
+      "n_label": true,
+      "n_degree": true,
+      "n_eccentricity": true,
+      "n_articulation_point": true,
+      "n_importance": {
+        "is_enabled": true,
+        "show_most_important": true
+      }
+    },
+    "edge_info":{
+      "is_enabled": false,
+      "e_weight": false,
+      "e_bridge": true
+    }
+  },
+  "algorithm": {
+          "choice": "panicks",
+          "scoring": {
+            "per_degree": 1,
+            "per_eccentricity": 2,
+            "per_bridge": 4,
+            "articulation_point": 8
+          }
+  },
+  "simulation": {
+    "layout": {
+      "override": false,
+      "algorithm": "kamada_kawai_layout"
+    },
+    "generation": {
+      "constrict_connections": {
+        "is_enabled": true,
+        "con_limit": 8,
+        "starting": 0
+      },
+      "con_chance_change":true
+    },
+    "output_file": true,
+    "use_preset": {
+      "is_enabled": true,
+      "file_names": ["G","G2"]
+    }
+  },
+  "node_painting": {
+        "is_enabled": true,
+        "resize": true,
+        "color": true,
+        "choice": "default",
+        "colormap": {
+          "is_enabled": true,
+          "colormap_func": "",
+          "map_by": "importance"
+        }
+    }
+}
