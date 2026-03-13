@@ -1,0 +1,156 @@
+// INTRODUCTION //
+
+This project is a small side-project i've developed for the course "Discreet Math" in my 1st year of University
+it's a way to apply my theoretical knowledge into a practical tool inorder to further solidify my understanding
+of said topic
+
+this is a simple tool i've made in a span of some days,after lectures.
+it does not contain any addition features like multi-graphs & pathfinding algorithms
+this is a simple theory-to-practice output i've made to play around with data,get ideas
+and generally get a taste of Graph Theory
+
+// Note 1
+This project does not contain the implementation of Euler Graphs & paths
+because i dont know how useful they are truly and i dont have a problem that contains them
+
+// Note 2
+
+At the Current Version,the project only supports specifically-structured JSON files
+this is subject to change but it's time consuming and idk if i can continue this that far
+
+// Documentation //
+
+
+
+
+//Bookmarks//
+
+----[ General
+     - Overview
+     - Basic Tutorial
+     - Modding
+
+----[ Technical
+     - Manual
+
+
+//---------//
+
+
+|||| GENERAL: OVERVIEW
+
+ Let's dip our toes into how this tool works now,
+
+ GST is broken in a chain-like structure,this structure,if we look inside,is made up by 5 parts.
+    - Creation
+    - Painting
+    - Logging and Statistics
+    - Rendering
+
+ The creation part is the start of the programm.
+ It's main purpose is to figure out if the user wants to use the inputted files as a input or generate their own graph
+ either by hand or (soon will be implemented) drawn using a GUI. It's phase doesnt last,but it sets up the foundation
+ for the next processes to take place.
+
+ The second part is Painting.
+ This is the part in which the programm runs a algorithm on the nodes to paint them based on their statistics and such
+ this is the most fun part of the code and it's coded in a way that's made to allow custom-defined functions inside easily.
+
+ Next up we have Logging & Statistics.
+ Now this part is mostly for nerds,or to check the details of your graph.
+ You can choose so it shows you everything,down to the edge information,weights, etc
+ or leave it high level,like only knowing the importance of a node
+
+ Lastly,Rendering.
+ This was the most anti-climactic part of the code,as it's only purpose is to
+ bundle up the graphs and create seperate windows for them to be shown.
+ Although now it has the capability to either run constantly or triggered via event.
+ The functionality was added due to the fact that i'll be implementing an A* Algorithm in this tool,
+ inorder to determine the shortest path from a node to another node.
+
+
+  |||| GENERAL: BASIC TUTORIAL
+
+   Now's the time to explain to you HOW to use this tool,since,if this document still exists,that means the tool is in a state where it demands more
+   programming knowledge and technical skill rather than creativity and usefulness
+
+   Step 1:
+    Creating a Graph
+
+   You can create a Graph by copying the Template.json and adding you own nodes/vertices & connections/edges
+   but what does each value do?
+   lets see here...
+   {
+  "directed": false,
+  "algorithm": "spring",
+  "V": ["Bob","Josh","Mary"],
+  "E": [
+      ["Bob","Josh"]
+      ,["Josh","Mary"]
+      ,["Mary","Bob"]
+      ]
+    }
+
+  directed -> it specifies whether the graph is a Directed Graph,or a Undirected Graph (DG & UG for short)
+  algorithm -> specifies which algorithm to use when positioning the nodes
+  usable algorithms:
+
+  -arf
+  -bipartite
+  -bfs
+  -circular
+  -forceatlas2
+  -kamada_kawai
+  -planar
+  -random
+  -shell
+  -spring
+  -spiral
+
+   The best ones to use (in my humble opinion) are "kamada_kawai" and "planar" BUT if you want a default one for all use-cases,use "spring"
+
+   V -> this is the list of vertices you can add to your graph,currently,due to not having built some type of converter,most people (unless you make a converter)
+   have to fill this in by hand
+
+   E -> Same with V But the difference is it stores the EDGES of the graph ("connections"),withouth those,your nodes are lonely
+
+
+   That's it about hte Graph JSON,pretty simple
+
+
+   Step 2:
+        Adding our Graph
+
+     To add the graph,you simply have to drag it into the "Graphs" Folder,there's some pre-made graphs there,for demo and testing purposes
+
+   Step 3:
+        Tweaking the rules
+
+     By now,you might have realised that there's a JSON file called "rules"
+    this files is the most important document in the entire tool.
+
+    This file dictates (When Selecting to use Presets) how the programm functions.
+    It's main purpose is:
+        - Determine the Algorithms for placing/painting nodes
+        - Customizability of the programm
+        - Research/Testing
+
+    and so,it's crucial you do NOT delete it (you can redownload it,but still)
+   in another part,i'll explain what each rule does.
+
+   Step 4:
+        Results
+
+       If you now want to test this tool and see how graphs generally look like,
+       after all this,you just tun the GST.py
+
+       That script will show you the logging that occured and will display all the graphs and update them in real-time (unless you opt not to)
+
+
+
+   [ Rest is under construction ]
+
+
+
+
+

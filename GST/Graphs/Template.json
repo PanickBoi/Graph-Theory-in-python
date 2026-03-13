@@ -1,0 +1,6 @@
+{
+  "directed": false,
+  "algorithm": "spring",
+  "V": ["Bob","Josh","Mary"],
+      "E": [["Bob","Josh"],["Josh","Mary"],["Mary","Bob"]]
+}
