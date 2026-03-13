@@ -30,7 +30,7 @@
   "simulation": {
     "layout": {
       "override": false,
-      "algorithm": "kamada_kawai_layout"
+      "algorithm": "kamada_kawai"
     },
     "generation": {
       "constrict_connections": {
@@ -41,10 +41,7 @@
       "con_chance_change":true
     },
     "output_file": true,
-    "use_preset": {
-      "is_enabled": true,
-      "file_names": ["G","G2"]
-    }
+    "use_preset": true
   },
   "node_painting": {
         "is_enabled": true,
@@ -56,5 +53,9 @@
           "colormap_func": "",
           "map_by": "importance"
         }
-    }
+    },
+  "render": {
+    "update_type": "always",
+    "fps": 60
+  }
 }
